@@ -1,0 +1,5 @@
+$('#main-box').html("<%= j(render 'detail', book: @book, book_comments: @book_comments, book_comment: @book_comment) %>");
+$('.book_title').val('');
+$('.book_body').val('');
+$('.error-box').hide();
+$('.success:nth-child(1)').text('<%= j(@success) %>');

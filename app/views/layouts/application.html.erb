@@ -90,10 +90,8 @@
       </div>
     <% end %>
     <div class="container">
-      <% if flash %>
-        <p class="success"><%= flash[:success] %></p>
-        <p class="success"><%= notice %></p>
-      <% end %>
+      <p class="success"><%= flash[:success] %></p>
+      <p class="success"><%= notice %></p>
       <%= yield %>
     </div>
   </body>

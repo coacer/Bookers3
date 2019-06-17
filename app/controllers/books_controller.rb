@@ -18,10 +18,12 @@ class BooksController < ApplicationController
     @books = Book.all
     @book = current_user.books.build(book_params)
     if @book.save
-      flash[:success] = "Book was successfully created."
-      redirect_to book_path(@book)
+      @book_comments = []
+      @book_comment = BookComment.new
+      @success = "Book was successfully created."
+      render :create
     else
-      render :index
+      render 'create_error'
     end
   end
 
