@@ -29,17 +29,17 @@
             <!-- ログイン時 -->
             <% if user_signed_in? %>
               <li>
-                <%= link_to user_path(current_user), class: "home" do %>
+                <%= link_to user_path(current_user), class: "home","data-turbolinks" => false do %>
                   <%= fa_icon "home", text: "Home" %> 
                 <% end %>
               </li>
               <li>
-                <%= link_to users_path, class: "users" do %>
+                <%= link_to users_path, class: "users","data-turbolinks" => false do %>
                   <%= fa_icon "user", text: "Users" %> 
                 <% end %>
               </li>
               <li>
-                <%= link_to books_path, class: "books" do %>
+                <%= link_to books_path, class: "books","data-turbolinks" => false do %>
                   <%= fa_icon "book", text: "Books" %> 
                 <% end %>
               </li>

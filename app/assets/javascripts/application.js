@@ -18,7 +18,6 @@
 //= require_tree .
 
 $(function(){
-  $('.search-form').hide();
   $('.search-btn').on('click', (e) => {
     e.preventDefault();
     $('.search-form').slideToggle(200);
