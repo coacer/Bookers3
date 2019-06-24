@@ -17,15 +17,21 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
-$(function(){
-  $('.search-btn').on('click', (e) => {
-    e.preventDefault();
-    $('.search-form').slideToggle(200);
-  });
+  $(function(){
+    $('.search-btn').on('click', (e) => {
+      e.preventDefault();
+      $('.search-form').slideToggle(200);
+    });
 
-  $('.slider').slick({
-    autoplay: true,
-    autoplaySpeed: 2000,
-    speed: 1000,
+    $('.slider').slick({
+      autoplay: true,
+      autoplaySpeed: 2000,
+      speed: 1000,
+    });
+
+    $(document).on('turbolinks:load', () => {
+      $('#book_comment_destroy').on('ajax:success', (e) => {
+        $('#book-comment-' + e.detail[0].comment.id).fadeOut();
+      });
+    });
   });
-});

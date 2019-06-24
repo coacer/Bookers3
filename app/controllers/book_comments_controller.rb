@@ -36,7 +36,8 @@ class BookCommentsController < ApplicationController
     book_comment = BookComment.find(params[:id])
     book = book_comment.book
     book_comment.destroy
-    redirect_to book_path(book)
+    # redirect_to book_path(book)
+    render json: { comment: book_comment }
   end
 
   private
