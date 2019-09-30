@@ -1,0 +1,6 @@
+<h1>検索履歴</h1>
+<%= link_to '新しい順', user_search_histories_path(current_user, method: 0), remote: true %>
+<%= link_to '五十音順', user_search_histories_path(current_user, method: 1), remote: true %>
+<div id="search-histories">
+  <%= render 'list', search_histories: @search_histories %>
+</div>

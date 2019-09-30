@@ -1,0 +1,11 @@
+<table class="table table-striped">
+	<tbody>
+    <% search_histories.each do |search_history| %>
+		<tr>
+      <th><%= search_history.content %></th>
+      <td><%= l search_history.created_at %></td>
+      <td><%= link_to "削除", user_search_history_path(current_user, search_history), method: :delete, class: "btn btn-danger" %></td>
+		</tr>
+    <% end %>
+	</tbody>
+</table>

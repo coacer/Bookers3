@@ -1,9 +1,11 @@
 class SearchController < ApplicationController
   def search
-    @model = params["search"]["model"] 
+    @model = params["search"]["model"]
     @content = params["search"]["content"]
     @how = params["search"]["how"]
-    @datas = search_for(@how, @model, @content) 
+    @datas = search_for(@how, @model, @content)
+
+    current_user.search_histories.create(content: @content)
   end
 
   private
